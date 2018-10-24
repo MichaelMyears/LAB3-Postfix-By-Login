@@ -13,15 +13,15 @@
     <ClCompile Include="..\..\test\test_main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\test\test_TStack.cpp">
+    <ClCompile Include="..\..\test\test_tmatrix.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\test\test_TPostfix.cpp">
+    <ClCompile Include="..\..\test\test_tvector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\include\Postfix.h">
+    <ClInclude Include="..\..\include\utmatrix.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -94,7 +94,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\samples\sample_matrix.cpp" />
+    <ClCompile Include="..\..\samples\sample_Postfix.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\include\utmatrix.h" />
