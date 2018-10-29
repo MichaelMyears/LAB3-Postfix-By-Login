@@ -5,8 +5,8 @@
 //
 // Верхнетреугольная матрица - реализация на основе шаблона вектора
 
-#ifndef __TPOSTFIX_H__
-#define __TPOSTFIX_H__
+//#ifndef __TPOSTFIX_H__
+//#define __TPOSTFIX_H__
 
 #include <iostream>
 
@@ -20,24 +20,24 @@ class TStack
 	int Lii;   //last item index
 	ElemType Stack[STACK_MAX_SIZE];
 
-	Tstack();
-	~TStack();
+//	TStack();
+//	~TStack();
+//
+//	bool is_full();
+//	bool is_free();
+//	bool is_Empty();
+//
+//	int top();
+//	ElemType top_value()
+//
+//	void push(ElemType Element);
+//	ElemType pop();
 
-	bool is_full();
-	bool is_free();
-	bool is_Empty();
 
-	int top();
-	ElemType top_value()
-
-	void push(ElemType Element);
-	ElemType pop();
-
-
-protected:
+public:
 	TStack()
 	{
-		Lii = 0;
+		Lii = -1;
 		for (int i = 0; i < STACK_MAX_SIZE; i++)
 			Stack[i] = {};
 	}
@@ -47,25 +47,17 @@ protected:
 	}
 	bool is_full()
 	{
-		if (Lii >= STACK_MAX_SIZE || Lii < 0)
+		if (Lii >= STACK_MAX_SIZE || Lii < -1)
 			throw("!Error! Stack size incorrect.");
 		if (Lii == STACK_MAX_SIZE - 1)
 			return 1;
 		return 0;
 	}
-	bool is_free()
+	bool is_empty()
 	{
-		if (Lii >= STACK_MAX_SIZE || Lii < 0)
+		if (Lii >= STACK_MAX_SIZE || Lii < -1)
 			throw("!Error! Stack size incorrect.");
-		if (Lii < STACK_MAX_SIZE - 1)
-			return 1;
-		return 0;
-	}
-	bool is_Empty()
-	{
-		if (Lii >= STACK_MAX_SIZE || Lii < 0)
-			throw("!Error! Stack size incorrect.");
-		if (Lii == 0)
+		if (Lii == -1)
 			return 1;
 		return 0;
 	}
@@ -73,27 +65,79 @@ protected:
 	{
 		if (is_full())
 			throw("!Error! Full Stack.");
-
-		Stack[Lii] = Element;
 		Lii++;
+		Stack[Lii] = Element;
 	}
 	ElemType pop()
 	{
-		if (is_Empty()) throw("!Error! Empty Stack.");
+		if (is_empty()) throw("!Error! Empty Stack.");
 		Lii--;
 		return Stack[Lii + 1];
 
 	}
-	int top()
-	{
-		return Lii;
-	}
 
-	ElemType top_value()
+	ElemType top()
 	{
+		if (is_empty()) throw("!Error! Empty Stack.");
 		return Stack[Lii];
 	}
 };
 
 
-#endif
+class TPostfix
+{
+//	string PRF;
+//	vector<string> OP_ex; // доступные операции
+//	TStack<string> OP_s;  // стек операций
+//	vector<string> OP_prf;// упорядоченные операции префиксного вида
+//	vector<string> operand; // упорядоченныt операнды префиксного вида
+//
+//	void fill()
+//	{
+//		OP_ex.push_back("+");
+//		OP_ex.push_back("-");
+//		OP_ex.push_back("*");
+//		OP_ex.push_back("/");
+//		OP_ex.push_back("%");
+//	}
+//
+//	void disassemble(string PRF1)
+//	{
+//		string tmp = "";
+//		for (int x = 0; x < PRF1.size(); x++)
+//		{
+//			tmp += PRF1[x];
+//			for (int y = 0; y < OP_ex.size(); y++)
+//			{
+//				for (int z = 0; OP_ex[y].size(); z++)
+//				{
+//					if ( == OP_ex[y][z])
+//					{
+//						
+//					}
+//				}
+//
+//			}
+//					
+//		}
+//	}
+//public:
+//	TPostfix(string PRF1 = "")
+//	{
+//		fill();
+//
+//
+//	}
+//	~TPostfix()
+//	{
+//
+//	}
+//	void set_prf(string PRF1)
+//	{
+//
+//	}
+//
+};
+
+
+//#endif
